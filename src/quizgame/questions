@@ -1,0 +1,179 @@
+1. Which of the following is not a Java primitive type?
+a) int
+b) boolean
+c) String
+d) double
+
+2. What is the default value of a boolean variable in Java?
+a) true
+b) false
+c) 0
+d) null
+
+3. Which keyword is used to inherit a class in Java?
+a) implements
+b) extends
+c) inherits
+d) super
+
+4. Which method is the entry point of a Java program?
+a) start()
+b) init()
+c) main()
+d) run()
+
+5. Which of the following is not a valid access modifier in Java?
+a) public
+b) private
+c) protected
+d) internal
+
+6. What does the `final` keyword indicate when applied to a variable?
+a) It can be changed later
+b) It is a constant
+c) It is private
+d) It is static
+
+7. Which of the following is used to handle exceptions in Java?
+a) catch
+b) throw
+c) try
+d) All of the above
+
+8. Which class is the superclass of all classes in Java?
+a) Object
+b) Class
+c) System
+d) Main
+
+9. Which of these is not a feature of Java?
+a) Platform independence
+b) Object-oriented
+c) Manual memory management
+d) Robust
+
+10. Which keyword is used to create an object in Java?
+a) class
+b) new
+c) create
+d) object
+
+11. What is the size of an `int` in Java?
+a) 4 bytes
+b) 2 bytes
+c) 8 bytes
+d) Depends on system
+
+12. Which of the following is not a loop in Java?
+a) for
+b) while
+c) do-while
+d) repeat
+
+13. Which package contains the Scanner class?
+a) java.io
+b) java.util
+c) java.lang
+d) java.net
+
+14. What is the output of `System.out.println(10 + 20 + "Java")`?
+a) Java1020
+b) 30Java
+c) Java30
+d) Compilation error
+
+15. Which keyword is used to prevent method overriding?
+a) static
+b) final
+c) abstract
+d) private
+
+16. Which of the following is used to define an interface?
+a) class
+b) interface
+c) abstract
+d) implements
+
+17. Which collection class allows duplicate elements?
+a) Set
+b) Map
+c) List
+d) None
+
+18. Which exception is thrown when dividing by zero?
+a) ArithmeticException
+b) NullPointerException
+c) IOException
+d) NumberFormatException
+
+19. Which keyword is used to refer to the current object?
+a) super
+b) this
+c) self
+d) current
+
+20. Which method is used to compare two strings in Java?
+a) equals()
+b) ==
+c) compare()
+d) match()
+
+21. Which of the following is not a wrapper class?
+a) Integer
+b) Double
+c) Boolean
+d) String
+
+22. Which keyword is used to define a constant in Java?
+a) const
+b) static
+c) final
+d) constant
+
+23. Which of the following is not part of OOP?
+a) Encapsulation
+b) Polymorphism
+c) Compilation
+d) Inheritance
+
+24. What is the result of `true && false`?
+a) true
+b) false
+c) null
+d) 0
+
+25. Which of the following is used to terminate a loop?
+a) continue
+b) break
+c) exit
+d) return
+
+26. Which of the following is not a valid Java identifier?
+a) _value
+b) $amount
+c) 1number
+d) total
+
+27. Which keyword is used to define a subclass constructor that calls the superclass constructor?
+a) super
+b) this
+c) base
+d) parent
+
+28. Which of the following is used to create a thread in Java?
+a) Runnable interface
+b) Thread class
+c) Both a and b
+d) None
+
+29. Which method is used to start a thread?
+a) run()
+b) start()
+c) execute()
+d) begin()
+
+30. Which of the following is not a type of polymorphism in Java?
+a) Compile-time
+b) Run-time
+c) Static binding
+d) Dynamic inheritance
