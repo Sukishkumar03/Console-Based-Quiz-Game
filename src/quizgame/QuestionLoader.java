@@ -6,23 +6,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class QuestionLoader {
-    private final static ArrayList<String> questions = new ArrayList<>();
-    static String path = "/home/sukish/IdeaProjects/ConsoleBasedQuizGame/questions";
 
-    public static void loadQuestion(){
-        try(BufferedReader br = new BufferedReader(new FileReader(path))) {
-            while(true){
-                String line = br.readLine();
-                if(line == null){
-                    break;
+    public static ArrayList<Question> loadQuestion(String fileName){
+        ArrayList<Question> question = new ArrayList<>();
+        try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
+            String line;
+            while ((line = br.readLine()) != null){
+                String questionText = line;
+                String[] options = new String[4];
+                for (int i = 0; i < options.length; i++) {
+                    options[i] = br.readLine();
                 }
-                questions.add(line);
+                String correctLine = br.readLine();
+                if(correctLine == null || correctLine.length() != 1){
+                    System.out.println("Invalid answer format skipping question");
+                    continue;
+                }
+                char correctOption = correctLine.charAt(0);
+                question.add(new Question(questionText, options, correctOption));
             }
-        } catch (IOException e) {
+        }catch (IOException e){
             System.out.println(e.getMessage());
         }
+        return question;
     }
-    public static ArrayList<String> getQuestion(){
-        return new ArrayList<>(questions);
-    }
+
 }
