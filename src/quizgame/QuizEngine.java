@@ -9,7 +9,13 @@ class InvalidAnswer extends RuntimeException{
     }
 }
 
-//add timer method
+/*
+Pending task:
+    -> Need to implement timer method,
+    -> Need to add difficulty level,
+    -> Need to ask user for number of questions they want to answer.
+ */
+
 public class QuizEngine {
     static int score;
 
