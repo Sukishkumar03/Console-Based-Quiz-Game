@@ -1,6 +1,7 @@
 package quizgame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 class InvalidAnswer extends RuntimeException{
@@ -9,52 +10,46 @@ class InvalidAnswer extends RuntimeException{
     }
 }
 
-/*
-Pending task:
-    -> Need to implement timer method,
-    -> Need to add difficulty level,
-    -> Need to ask user for number of questions they want to answer.
- */
-
 public class QuizEngine {
     static int score;
-
     static Scanner sc = new Scanner(System.in);
 
-    static ArrayList<Question> correctAnswer = new ArrayList<>();
-
-    static ArrayList<Question> wrongAnswer = new ArrayList<>();
-
-    public static int displayQuestion(String fileName){
+    public static void getAnswer(String fileName){
         ArrayList<Question> questions = QuestionLoader.loadQuestion(fileName);
+        Collections.shuffle(questions);
         int i = 0;
-        while (i < questions.size()){
+        boolean isTrue = true;
+        int numOfQuestion = 0;
+        while (isTrue){
+            System.out.println("Enter the number of questions? ");
+            numOfQuestion = sc.nextInt();
+            if(numOfQuestion <= questions.size() && numOfQuestion > 0){
+                isTrue = false;
+            }
+            else {
+                System.out.println("Total available questions: "+questions.size()+" Enter within that range and question can't be 0 or less than 0");
+            }
+        }
+        sc.nextLine();
+        while (i < numOfQuestion){
             System.out.println("Question number: "+ (i+1));
             System.out.print(questions.get(i));
-            System.out.println("Enter the correct option here: ");
-            String answer = sc.nextLine();
-            if(answer.charAt(0) <= 'a' && answer.charAt(0) >= 'd'){
-                throw new InvalidAnswer("Enter valid options a-d");
-            }
-            if(answer.charAt(0) == questions.get(i).getCorrectOption()){
-                System.out.println("Correct answer!!"+'\n');
-                correctAnswer.add(questions.get(i));
-                score++;
-            }else{
-                System.out.println("Wrong answer.");
-                System.out.println("correct answer: "+questions.get(i).getCorrectOption()+'\n');
-                wrongAnswer.add(questions.get(i));
-            }
+            System.out.println('\n'+"Enter your answer option here: ");
+            String answer =  sc.nextLine().toLowerCase();
+                if (answer.charAt(0) < 'a' || answer.charAt(0) > 'd') {
+                    throw new InvalidAnswer("Enter valid options a-d");
+                }
+                if (answer.charAt(0) == questions.get(i).getCorrectOption()) {
+                    System.out.println("Correct answer" + '\n');
+                    score++;
+                } else {
+                    System.out.println("Wrong answer." + '\n');
+                }
             i++;
         }
+    }
+    public static int displayQuestion(String fileName){
+        getAnswer(fileName);
         return score;
-    }
-
-    public static ArrayList<Question> getCorrectAnswer(){
-        return correctAnswer;
-    }
-
-    public static ArrayList<Question> getWrongAnswer(){
-        return wrongAnswer;
     }
 }
