@@ -10,9 +10,8 @@ public class QuestionLoader {
     public static ArrayList<Question> loadQuestion(String fileName){
         ArrayList<Question> question = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
-            String line;
-            while ((line = br.readLine()) != null){
-                String questionText = line;
+            String questionText;
+            while ((questionText = br.readLine()) != null){
                 String[] options = new String[4];
                 for (int i = 0; i < options.length; i++) {
                     options[i] = br.readLine();
