@@ -1,0 +1,90 @@
+Which of the following is true about the `ThreadLocal` class in Java?
+a) It provides thread-safe access to shared variables
+b) It creates variables local to a thread
+c) It prevents thread starvation
+d) It ensures atomicity of operations
+b
+What is the purpose of the `java.util.concurrent.locks.ReentrantLock` class?
+a) To provide a non-blocking lock mechanism
+b) To allow multiple threads to access a resource simultaneously
+c) To provide explicit locking with advanced features like fairness
+d) To replace synchronized blocks
+c
+Which of the following is not a valid method in the `Stream` API?
+a) filter()
+b) map()
+c) flatMap()
+d) reduceAll()
+d
+What is the purpose of the `CompletableFuture` class in Java?
+a) To handle asynchronous computations
+b) To manage thread pools
+c) To implement reactive programming
+d) To replace Future and Callable
+a
+Which of the following is true about the `ForkJoinPool` in Java?
+a) It is used for single-threaded tasks
+b) It divides tasks into smaller subtasks for parallel execution
+c) It replaces ExecutorService
+d) It is used for thread-safe collections
+b
+Which of the following is not a valid way to create a custom annotation in Java?
+a) @interface
+b) @Annotation
+c) @Retention
+d) @Target
+b
+What is the purpose of the `java.lang.instrument` package?
+a) To manage threads
+b) To provide tools for bytecode manipulation
+c) To handle exceptions
+d) To implement design patterns
+b
+Which of the following is true about the `WeakHashMap` class in Java?
+a) It uses strong references for keys
+b) It removes entries when keys are no longer referenced
+c) It is thread-safe
+d) It does not allow null keys
+b
+Which of the following is not a valid method in the `Collectors` class?
+a) toList()
+b) toMap()
+c) toSet()
+d) toStream()
+d
+What is the purpose of the `java.nio` package?
+a) To handle file I/O
+b) To provide non-blocking I/O operations
+c) To manage threads
+d) To implement design patterns
+b
+Which of the following is true about the `AtomicInteger` class in Java?
+a) It provides thread-safe operations on integers
+b) It is used for non-blocking I/O
+c) It replaces synchronized blocks
+d) It is part of the java.util package
+a
+Which of the following is not a valid way to implement a singleton in Java?
+a) Using a static block
+b) Using an enum
+c) Using a private constructor
+d) Using a synchronized method
+a
+What is the purpose of the `java.util.concurrent.ExecutorService` interface?
+a) To manage thread pools
+b) To handle exceptions
+c) To implement design patterns
+d) To provide non-blocking I/O
+a
+Which of the following is true about the `java.lang.reflect.Proxy` class?
+a) It is used to create dynamic proxies for interfaces
+b) It is used for bytecode manipulation
+c) It is part of the java.util package
+d) It replaces the Reflection API
+a
+Which of the following is not a valid way to handle deadlocks in Java?
+a) Using synchronized blocks
+b) Using ReentrantLock
+c) Using wait() and notify()
+d) Using ThreadLocal
+d

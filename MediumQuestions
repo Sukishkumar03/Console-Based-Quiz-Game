@@ -1,0 +1,180 @@
+Which of the following is true about the `volatile` keyword in Java?
+a) It guarantees atomicity  
+b) It prevents instruction reordering  
+c) It locks the variable  
+d) It disables garbage collection  
+b
+What is the purpose of the `transient` keyword in Java?  
+a) To make a variable final  
+b) To exclude a field from serialization  
+c) To enable multithreading  
+d) To mark a method as abstract  
+b
+Which design pattern is used in Java’s `Runtime.getRuntime()` method?  
+a) Factory  
+b) Singleton  
+c) Builder  
+d) Prototype  
+b
+Which of the following is not a valid state of a thread in Java?  
+a) NEW  
+b) RUNNING  
+c) BLOCKED  
+d) TERMINATED  
+b
+Which method is called by the garbage collector before object destruction?  
+a) finalize()  
+b) destroy()  
+c) dispose()  
+d) clean()  
+a
+What does the `synchronized` keyword do in Java?  
+a) Prevents inheritance  
+b) Enables serialization  
+c) Controls thread access to blocks/methods  
+d) Optimizes memory usage  
+c
+Which of the following is not a valid functional interface in Java 8?  
+a) Runnable  
+b) Comparator  
+c) Serializable  
+d) Consumer  
+c
+What is the default size of the Java thread stack?  
+a) 128 KB  
+b) 512 KB  
+c) 1 MB  
+d) Depends on JVM  
+d
+Which of the following is used to create immutable objects in Java?  
+a) final keyword  
+b) static keyword  
+c) Builder pattern  
+d) All of the above  
+d
+Which annotation is used to suppress compiler warnings?  
+a) @Override  
+b) @SuppressWarnings  
+c) @Deprecated  
+d) @SafeVarargs  
+b
+Which of the following is not a valid way to create a stream in Java 8?  
+a) Stream.of()  
+b) Arrays.stream()  
+c) Collection.stream()  
+d) Stream.create()  
+d
+What is the time complexity of accessing an element in a HashMap?  
+a) O(1)  
+b) O(n)  
+c) O(log n)  
+d) O(n log n)  
+a
+Which of the following is not a valid type of reference in Java?  
+a) Strong  
+b) Weak  
+c) Phantom  
+d) Soft  
+a
+Which class is used to implement thread-safe collections in Java?  
+a) ArrayList  
+b) HashMap  
+c) ConcurrentHashMap  
+d) TreeMap  
+c
+Which of the following is not a valid method in the `Optional` class?  
+a) isPresent()  
+b) get()  
+c) orElse()  
+d) find()  
+d
+What is the purpose of the `default` keyword in interfaces?  
+a) To define default values  
+b) To implement methods in interfaces  
+c) To override superclass methods  
+d) To declare constants  
+b
+Which of the following is true about Java memory model?  
+a) It allows direct memory access  
+b) It defines visibility and ordering of variables across threads  
+c) It disables garbage collection  
+d) It uses reference counting  
+b
+Which of the following is not a valid Stream terminal operation?  
+a) forEach()  
+b) map()  
+c) collect()  
+d) reduce()  
+b
+Which of the following is not a valid way to stop a thread?  
+a) interrupt()  
+b) stop()  
+c) destroy()  
+d) return from run()  
+c
+Which annotation is used to mark a method that should be executed after dependency injection?  
+a) @PostConstruct  
+b) @Inject  
+c) @Autowired  
+d) @Init  
+a
+Which of the following is not a valid Java memory area?  
+a) Heap  
+b) Stack  
+c) Register  
+d) Method Area  
+c
+What is the purpose of the `java.lang.ref` package?  
+a) Thread management  
+b) Reflection  
+c) Reference handling for GC  
+d) File I/O  
+c
+Which of the following is not a valid way to implement polymorphism?  
+a) Method overloading  
+b) Method overriding  
+c) Constructor chaining  
+d) Interface implementation  
+c
+Which of the following is not a valid use of reflection?  
+a) Access private fields  
+b) Create objects dynamically  
+c) Compile code  
+d) Invoke methods  
+c
+Which of the following is not a valid type of class in Java?  
+a) Static class  
+b) Anonymous class  
+c) Abstract class  
+d) Final class  
+a
+Which of the following is not a valid method in the `Thread` class?  
+a) start()  
+b) run()  
+c) sleep()  
+d) wait()  
+d
+Which of the following is not a valid way to achieve thread safety?  
+a) Using synchronized blocks  
+b) Using volatile variables  
+c) Using immutable objects  
+d) Using static methods  
+d
+Which of the following is not a valid feature of Java 8?  
+a) Lambda expressions  
+b) Stream API  
+c) Modules  
+d) Default methods in interfaces  
+c
+Which of the following is not a valid use of the `super` keyword?  
+a) Call superclass constructor  
+b) Access superclass method  
+c) Access superclass variable  
+d) Access subclass method  
+d
+Which of the following is not a valid way to handle concurrency in Java?  
+a) ExecutorService  
+b) ThreadPool  
+c) ForkJoinPool  
+d) EventQueue  
+d

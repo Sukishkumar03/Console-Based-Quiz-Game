@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 public class ScoreTracker {
     static Scanner sc = new Scanner(System.in);
+    String userName;
+    public static void userInfo(){
+        ScoreTracker st = new ScoreTracker();
+        System.out.println("Enter your display name: ");
+        st.userName = sc.nextLine();
+    }
+
     public static int score(String fileName){
         int score = 0;
         try {
