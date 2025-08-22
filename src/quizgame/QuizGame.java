@@ -24,7 +24,6 @@ public class QuizGame {
                 1.Number of questions is users choice.
                 2.Each correct answer will get 1 mark.
                 3.There is no negative mark for wrong answers.
-                4.There is no time limit.
                 """);
     }
     public static void rulesMid(){
@@ -33,7 +32,7 @@ public class QuizGame {
                 1.Number of questions is users choice.
                 2.Each correct answer will get 1 mark.
                 3.There is no negative mark for wrong answers.
-                4.There is a time limit of 30 sec per questions.
+                4.There is a time limit of 30 seconds per questions.
                 """);
     }
     public static void rulesHard(){
@@ -42,7 +41,7 @@ public class QuizGame {
                 1.Number of questions is users choice.
                 2.Each correct answer will get 3 mark.
                 3.There is a Negative mark -1 for each wrong answers.
-                4.There is a time limit of 15 sec per questions.
+                4.There is a time limit of 15 seconds per questions.
                 """);
     }
     public static void easyQuestion(){

@@ -23,7 +23,6 @@ public class ScoreTracker {
                 case 'y':
                     QuizEngine.displayQuestion(fileName);
                     break;
-
                 case 'n':
                     System.exit(0);
             }
