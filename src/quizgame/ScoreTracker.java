@@ -11,17 +11,17 @@ public class ScoreTracker {
         st.userName = sc.nextLine();
     }
 
-    public static int score(String fileName){
+    public static int score(String fileName, String difficulty){
         int score = 0;
         try {
-            score = QuizEngine.displayQuestion(fileName);
+            score = QuizEngine.displayQuestion(fileName, difficulty);
         } catch (InvalidAnswer e) {
             System.out.println("Exception caught you must have entered wrong input: "+e.getMessage());
             System.out.println("Do you want to try again from start (y/n)? ");
             char ch = sc.nextLine().toLowerCase().charAt(0);
             switch (ch){
                 case 'y':
-                    QuizEngine.displayQuestion(fileName);
+                    QuizEngine.displayQuestion(fileName, difficulty);
                     break;
                 case 'n':
                     System.exit(0);

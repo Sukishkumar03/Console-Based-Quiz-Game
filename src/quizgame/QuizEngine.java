@@ -14,7 +14,7 @@ public class QuizEngine {
     static int score;
     static Scanner sc = new Scanner(System.in);
 
-    public static void getAnswer(String fileName){
+    public static void getAnswer(String fileName, String difficulty){
         ArrayList<Question> questions = QuestionLoader.loadQuestion(fileName);
         Collections.shuffle(questions);
         int i = 0;
@@ -40,16 +40,26 @@ public class QuizEngine {
                     throw new InvalidAnswer("Enter valid options a-d");
                 }
                 if (answer.charAt(0) == questions.get(i).getCorrectOption()) {
-                    System.out.println("Correct answer" + '\n');
-                    score++;
+                    if(difficulty.equals("easy") || difficulty.equals("medium")) {
+                        System.out.println("Correct answer" + '\n');
+                        score++;
+                    } else if (difficulty.equals("hard")) {
+                        System.out.println("Correct answer" + '\n');
+                        score += 3;
+                    }
                 } else {
-                    System.out.println("Wrong answer." + '\n');
+                    if(difficulty.equals("easy") || difficulty.equals("medium")) {
+                        System.out.println("Wrong answer." + '\n');
+                    } else if (difficulty.equals("hard")) {
+                        System.out.println("Wrong answer." + '\n');
+                        score--;
+                    }
                 }
             i++;
         }
     }
-    public static int displayQuestion(String fileName){
-        getAnswer(fileName);
+    public static int displayQuestion(String fileName, String difficulty){
+        getAnswer(fileName, difficulty);
         return score;
     }
 }

@@ -50,7 +50,25 @@ public class QuizGame {
         if(ch == 'y'){
             rulesEasy();
         }
-        int score = ScoreTracker.score(easyQuestion);
+        int score = ScoreTracker.score(easyQuestion, "easy");
+        System.out.println("Final score: "+score);
+    }
+    public static void mediumQuestion(){
+        System.out.println("Do you want to check the rules first? ");
+        char ch = sc.nextLine().toLowerCase().charAt(0);
+        if(ch == 'y'){
+            rulesMid();
+        }
+        int score = ScoreTracker.score(mediumQuestion, "medium");
+        System.out.println("Final score: "+score);
+    }
+    public static void hardQuestion(){
+        System.out.println("Do you want to check the rules first? ");
+        char ch = sc.nextLine().toLowerCase().charAt(0);
+        if(ch == 'y'){
+            rulesHard();
+        }
+        int score = ScoreTracker.score(hardQuestion, "hard");
         System.out.println("Final score: "+score);
     }
 
@@ -72,12 +90,10 @@ public class QuizGame {
                 easyQuestion();
                 break;
             case 2:
-                int score = ScoreTracker.score(mediumQuestion);
-                System.out.println("Final score: "+score);
+                mediumQuestion();
                 break;
             case 3:
-                score = ScoreTracker.score(hardQuestion);
-                System.out.println("Final score: "+score);
+                hardQuestion();
                 break;
             case 4:
                 System.exit(0);
