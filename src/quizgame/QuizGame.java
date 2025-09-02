@@ -108,10 +108,35 @@ public class QuizGame {
                 }
         }
     }
+    public static void quizGame(){
+        userInterface();
+        boolean isTrue = true;
+        while (isTrue){
+            System.out.println("Your quiz has ended select a option below");
+            System.out.println("""
+                    1.Return to main menu
+                    2.Exit
+                    """);
+            System.out.print("Option: ");
+            int ch = sc.nextInt();
+            sc.nextLine();
+            switch (ch){
+                case 1:
+                    userInterface();
+                    break;
+                case 2:
+                    isTrue = false;
+                    break;
+                default:
+                    System.out.println("Entered Wrong input terminating the application");
+                    System.exit(0);
+            }
+        }
+    }
     public static void main(String[] args) {
         System.out.print("Press ENTER to start the quiz");
         sc.nextLine();
         System.out.println("|----------------------------------------|");
-        userInterface();
+        quizGame();
     }
 }

@@ -15,6 +15,7 @@ public class QuizEngine {
     static Scanner sc = new Scanner(System.in);
 
     public static void getAnswer(String fileName, String difficulty){
+        score = 0;
         ArrayList<Question> questions = QuestionLoader.loadQuestion(fileName);
         Collections.shuffle(questions);
         int i = 0;
