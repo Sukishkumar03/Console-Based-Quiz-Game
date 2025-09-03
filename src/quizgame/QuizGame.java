@@ -9,6 +9,14 @@ public class QuizGame {
     static String mediumQuestion = "/home/sukish/IdeaProjects/ConsoleBasedQuizGame/MediumQuestions";
     static String hardQuestion = "/home/sukish/IdeaProjects/ConsoleBasedQuizGame/HardQuestions";
 
+    public static void mainMenu(){
+        System.out.println("""
+                1.Start
+                2.Leaderboard
+                3.Customer support
+                """);
+    }
+
     public static void displayLevel(){
         System.out.println("""
                 1.Easy
@@ -72,8 +80,34 @@ public class QuizGame {
         System.out.println("Final score: "+score);
     }
 
-    public static void userInterface(){
+    public static void leaderboard(){
+
+    }
+
+    public static void customerSupport(){
+        CustomerSupport.mainPage();
+    }
+
+    public static void mainUI(){
         System.out.println("|----------Welcome to Quiz app-----------|");
+        mainMenu();
+        System.out.println("Select a option: ");
+        int ch = sc.nextInt();
+        switch (ch){
+            case 1:
+                levelSelect();
+                break;
+            case 2:
+                leaderboard();
+                break;
+            case 3:
+                customerSupport();
+                break;
+            default:
+                System.out.println("Invalid Input");
+        }
+    }
+    public static void levelSelect(){
         System.out.println("Select difficulty level: "+'\n' +"Each level has different rules");
         displayLevel();
         int choice = 0;
@@ -82,7 +116,7 @@ public class QuizGame {
             sc.nextLine();
         } catch (InputMismatchException e) {
             char ch = sc.nextLine().toLowerCase().charAt(0);
-            if(ch == 'y') userInterface();
+            if(ch == 'y') levelSelect();
             else if(ch == 'n') System.exit(0);
         }
         switch (choice){
@@ -101,7 +135,7 @@ public class QuizGame {
                 System.out.println("You entered wrong input do you want to try again? ");
                 char ch = sc.nextLine().toLowerCase().charAt(0);
                 if(ch == 'y'){
-                    userInterface();
+                    levelSelect();
                 }
                 else if(ch == 'n'){
                     System.exit(0);
@@ -109,7 +143,7 @@ public class QuizGame {
         }
     }
     public static void quizGame(){
-        userInterface();
+        mainUI();
         boolean isTrue = true;
         while (isTrue){
             System.out.println("Your quiz has ended select a option below");
@@ -122,7 +156,7 @@ public class QuizGame {
             sc.nextLine();
             switch (ch){
                 case 1:
-                    userInterface();
+                    mainUI();
                     break;
                 case 2:
                     isTrue = false;
