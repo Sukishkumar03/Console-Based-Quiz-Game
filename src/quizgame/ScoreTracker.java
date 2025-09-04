@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 public class ScoreTracker {
     static Scanner sc = new Scanner(System.in);
-    String userName;
+    private static String userName;
 
-    public static void userInfo(){
-        ScoreTracker st = new ScoreTracker();
+    public static int userInfo(String fileName, String difficulty){
         System.out.println("Enter your display name: ");
-        st.userName = sc.nextLine();
+        userName = sc.nextLine();
+        int score = score(fileName,difficulty);
+        return score;
+    }
+
+    public static String getUserName(){
+        return userName;
     }
 
     public static int score(String fileName, String difficulty){

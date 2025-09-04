@@ -12,9 +12,10 @@ public class QuizGame {
     public static void mainMenu(){
         System.out.println("""
                 1.Start
-                2.Leaderboard
+                2.Scoreboard
                 3.Customer support
                 4.Exit
+                ========================================
                 """);
     }
 
@@ -24,33 +25,39 @@ public class QuizGame {
                 2.Medium
                 3.Hard
                 4.Exit
-                ----------------------------------------
+                ========================================
                 """);
     }
     public static void rulesEasy(){
         System.out.println("""
                 Rules for Easy Questions:
+                ----------------------------------------------
                 1.Number of questions is users choice.
                 2.Each correct answer will get 1 mark.
                 3.There is no negative mark for wrong answers.
+                ----------------------------------------------
                 """);
     }
     public static void rulesMid(){
         System.out.println("""
                 Rules for Medium Questions:
+                ----------------------------------------------------
                 1.Number of questions is users choice.
                 2.Each correct answer will get 1 mark.
                 3.There is no negative mark for wrong answers.
                 4.There is a time limit of 30 seconds per questions.
+                ----------------------------------------------------
                 """);
     }
     public static void rulesHard(){
         System.out.println("""
                 Rules for Hard Questions:
+                ---------------------------------------------------
                 1.Number of questions is users choice.
                 2.Each correct answer will get 3 mark.
                 3.There is a Negative mark -1 for each wrong answers.
                 4.There is a time limit of 15 seconds per questions.
+                ----------------------------------------------------
                 """);
     }
     public static void easyQuestion(){
@@ -59,8 +66,9 @@ public class QuizGame {
         if(ch == 'y'){
             rulesEasy();
         }
-        int score = ScoreTracker.score(easyQuestion, "easy");
-        System.out.println("Final score: "+score);
+        int score = ScoreTracker.userInfo(easyQuestion, "easy");
+        String name = ScoreTracker.getUserName();
+        System.out.println(name+" your Final score is: "+score);
     }
     public static void mediumQuestion(){
         System.out.println("Do you want to check the rules first? ");
@@ -68,7 +76,7 @@ public class QuizGame {
         if(ch == 'y'){
             rulesMid();
         }
-        int score = ScoreTracker.score(mediumQuestion, "medium");
+        int score = ScoreTracker.userInfo(mediumQuestion, "medium");
         System.out.println("Final score: "+score);
     }
     public static void hardQuestion(){
@@ -77,11 +85,11 @@ public class QuizGame {
         if(ch == 'y'){
             rulesHard();
         }
-        int score = ScoreTracker.score(hardQuestion, "hard");
+        int score = ScoreTracker.userInfo(hardQuestion, "hard");
         System.out.println("Final score: "+score);
     }
 
-    public static void leaderboard(){
+    public static void scoreboard(){
 
     }
 
@@ -90,7 +98,7 @@ public class QuizGame {
     }
 
     public static void mainUI(){
-        System.out.println("|----------Welcome to Quiz app-----------|");
+        System.out.println("|==========Welcome to Quiz app==========|");
         mainMenu();
         System.out.println("Select a option: ");
         int ch = sc.nextInt();
@@ -99,7 +107,7 @@ public class QuizGame {
                 levelSelect();
                 break;
             case 2:
-                leaderboard();
+                scoreboard();
                 break;
             case 3:
                 customerSupport();
@@ -111,7 +119,11 @@ public class QuizGame {
         }
     }
     public static void levelSelect(){
-        System.out.println("Select difficulty level: "+'\n' +"Each level has different rules");
+        System.out.println("========================================");
+        System.out.println("Select difficulty level: ");
+        System.out.println("========================================");
+        System.out.println("Each level has different rules");
+        System.out.println("----------------------------------------");
         displayLevel();
         int choice = 0;
         try {
