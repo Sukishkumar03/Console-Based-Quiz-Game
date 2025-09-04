@@ -12,9 +12,9 @@ public class CustomerSupport {
     public static void mainPage(){
         System.out.println("Welcome to customer support page");
         System.out.println("""
-                1.Raise a ticket.
-                2.Review ticket.
-                3.return to main menu.
+                1.Raise a ticket
+                2.Review ticket
+                3.return to main menu
                 """);
         int ch = sc.nextInt();
         switch (ch){
@@ -33,10 +33,10 @@ public class CustomerSupport {
     public static void customerQueries(){
         System.out.println("Frequently asked questions: ");
         System.out.println("""
-                1.Problem in Timer.
-                2.Marks isn't updating properly.
-                3.Leaderboard not updating.
-                4.If your problem isn't listed here enter 4.
+                1.Problem in Timer
+                2.Marks isn't updating properly
+                3.Leaderboard not updating
+                4.If your problem isn't listed here enter 4
                 """);
         int ch = sc.nextInt();
         switch (ch){
@@ -85,14 +85,14 @@ public class CustomerSupport {
         System.out.println("Enter your ticket number to review it.");
         int ticketNumber = sc.nextInt();
         try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
-            String line;
-            while ((line = br.readLine()) != null){
-                if(line.contains(ticketNumber+"")){
-                    System.out.println(line);
-                }else{
-                    System.out.println("Invalid ticket.");
+            String line = br.readLine();
+            String newLine;
+            if(line.contains(ticketNumber+"")){
+                System.out.println(line);
+                while ((newLine = br.readLine()) != null){
+                    System.out.println(newLine);
                 }
-            }
+            }else System.out.println("Invalid ticket number");
         }catch (IOException e){
             System.out.println(e.getMessage());
         }

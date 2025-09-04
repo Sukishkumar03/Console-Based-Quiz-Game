@@ -14,6 +14,7 @@ public class QuizGame {
                 1.Start
                 2.Leaderboard
                 3.Customer support
+                4.Exit
                 """);
     }
 
@@ -103,6 +104,8 @@ public class QuizGame {
             case 3:
                 customerSupport();
                 break;
+            case 4:
+                System.exit(0);
             default:
                 System.out.println("Invalid Input");
         }
