@@ -9,8 +9,7 @@ public class ScoreTracker {
     public static int userInfo(String fileName, String difficulty){
         System.out.println("Enter your display name: ");
         userName = sc.nextLine();
-        int score = score(fileName,difficulty);
-        return score;
+        return score(fileName,difficulty);
     }
 
     public static String getUserName(){
