@@ -90,15 +90,41 @@ public class CustomerSupport {
     public static void reviewTicket(){
         System.out.println("Enter your ticket number to review it.");
         int ticketNumber = sc.nextInt();
-        try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
+        sc.nextLine();
+        try (BufferedReader br = new BufferedReader(new FileReader(logFile));
+             BufferedWriter bw = new BufferedWriter(new FileWriter(logFile,true))) {
             String line = br.readLine();
             String newLine;
             if(line.contains(ticketNumber+"")){
                 System.out.println(line);
                 while ((newLine = br.readLine()) != null){
                     System.out.println(newLine);
+                    if(newLine.contains("(Resolved)")){
+                        System.out.println("Your ticket has been processed successfully and the problem has beed fixed.");
+                        break;
+                    }else{
+                        System.out.println("Your ticket is in review" +'\n'+"Do you want to add more comments (y/n)?");
+                        char ch = sc.nextLine().toLowerCase().charAt(0);
+                        if(ch == 'y'){
+                            System.out.print("add your comments here: ");
+                            String comments = sc.nextLine();
+                            bw.append("New comments:");
+                            bw.newLine();
+                            bw.append(comments);
+                            bw.flush();
+                            System.out.println("Your new comments has been added going back to main menu");
+                            break;
+                        }else{
+                            System.out.println("Thank you returning to main page");
+                            break;
+                        }
+                    }
                 }
-            }else System.out.println("Invalid ticket number");
+                mainPage();
+            }else{
+                System.out.println("Invalid ticket number");
+                mainPage();
+            }
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
