@@ -4,6 +4,7 @@ import java.io.*;
 import java.time.LocalDateTime;
 import java.util.Random;
 import java.util.Scanner;
+import java.time.format.DateTimeFormatter;
 
 public class CustomerSupport {
     static Scanner  sc = new Scanner(System.in);
@@ -31,6 +32,7 @@ public class CustomerSupport {
     }
 
     public static void customerQueries(){
+        final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy | HH:mm:ss");
         System.out.println("Frequently asked questions: ");
         System.out.println("""
                 1.Problem in Timer
@@ -44,6 +46,7 @@ public class CustomerSupport {
                 System.out.println("Timer option is only available in medium and hard level."+'\n'+"Which level did you select?");
                 QuizGame.displayLevel();
                 int choice = sc.nextInt();
+                sc.nextLine();
                 if(choice == 1){
                     System.out.println("Timer isn't available in easy level try other modes for timer.");
                 } else if (choice == 2 || choice == 3) {
@@ -51,18 +54,21 @@ public class CustomerSupport {
                     String log = sc.nextLine();
                     try(BufferedWriter bw = new BufferedWriter(new FileWriter(logFile))) {
                         LocalDateTime timeAndDate = LocalDateTime.now();
+                        String formatedDate = timeAndDate.format(dateFormat);
                         Random random = new Random();
                         int ticketNumber = random.nextInt(9999) + 1000;
                         bw.write("Ticket number: "+ticketNumber);
                         bw.newLine();
                         bw.write(" | Problem in timer: ");
                         bw.write(log + " | ");
-                        bw.write(" Log entered at: "+timeAndDate + '|');
+                        bw.write(" Log entered at: "+formatedDate + '|');
                         bw.newLine();
                         bw.flush();
                         System.out.println("Your ticket has been raised we will get back to you." +'\n'+"Ticket Number: "+ticketNumber);
+                        System.out.println("Returning to main menu");
+                        mainPage();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        System.out.println(e.getMessage());
                     }
                 }else {
                     System.out.println("Invalid option returning to main page.");
