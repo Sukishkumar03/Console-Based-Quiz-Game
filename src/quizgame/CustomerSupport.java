@@ -123,7 +123,7 @@ public class CustomerSupport {
                         LocalDateTime timeAndDate = LocalDateTime.now();
                         String formatedDate = timeAndDate.format(dateFormat);
                         Random random = new Random();
-                        int ticketNumber = random.nextInt(9999) + 1000;
+                        int ticketNumber = random.nextInt(1000,9999);
                         bw.write("Ticket number: "+ticketNumber);
                         bw.newLine();
                         bw.write(" | Problem in mark updating process : ");
